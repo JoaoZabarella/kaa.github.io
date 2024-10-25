@@ -29,6 +29,8 @@ const countdown = setInterval(() => {
 
 // Imagens do casal
 const imagensCasal = [
+    "imgs/foto1.jpg",
+    "imgs/foto2.jpg",
     "imgs/foto3.jpg",
     "imgs/foto5.jpg",
     "imgs/foto6.jpg",
