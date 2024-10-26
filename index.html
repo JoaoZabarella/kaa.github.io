@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <audio autoplay loop>
+        <source src="music/Delacruz e IZA - Afrodite (Letra_Legendado).mp3" type="audio/mpeg">
+       
+    </audio>
+    <!-- Adicionando o vídeo de fundo -->
+    <video id="background-video" autoplay muted loop>
+        <source src="music/afrodite - Delacruz e IZA (Prod. JOK3R).mp4" type="video/mp4"> <!-- Insira o caminho do seu vídeo aqui -->
+        Seu navegador não suporta vídeos HTML5.
+    </video>
+
     <div class="container">
         <h1>Juntos a</h1>
         <img id="casal-img" src="images/foto1.jpg" alt="Imagem do casal">
@@ -24,11 +35,32 @@
             <br><br> 
             Bom, amor, é isso. Feliz aniversário! Que Deus te abençoe muito. Aproveite muito o seu dia, porque ele é todinho seu. Eu te amo, amor.</h2>
 
-        
         <button id="show-heart-btn">Mostrar Amor</button>
       
         <div id="heart-message" class="hidden"></div>
+
+        <!-- Adicionando o vídeo dentro da caixinha de informações -->
+        <div class="info-box">
+            <video id="special-video" autoplay muted loop>
+                <source src="music/VIDEOFUNDO.mp4" type="video/mp4"> <!-- Insira o caminho do seu vídeo aqui -->
+            
+            </video>
+           
+
+        </div>
+
+
+
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var audio = document.querySelector("audio");
+            audio.addEventListener("error", function() {
+                console.error("Erro ao carregar o áudio.");
+            });
+        });
+    </script>
+    
 
     <script src="script.js"></script>
 </body>

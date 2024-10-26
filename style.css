@@ -7,14 +7,29 @@ body {
     margin: 0; 
 }
 
+#background-video {
+    position: fixed; /* Fixa o vídeo na tela */
+    top: 50%;
+    left: 50%;
+    min-width: 100%; /* Garante que o vídeo cubra toda a largura */
+    min-height: 100%; /* Garante que o vídeo cubra toda a altura */
+    width: auto;
+    height: auto;
+    z-index: -1; /* Coloca o vídeo atrás de outros elementos */
+    transform: translate(-50%, -50%); /* Centraliza o vídeo */
+    object-fit: cover; /* Corta o vídeo para que ele cubra a área */
+}
+
 .container {
     background-color: rgba(61, 0, 61, 0.9); 
     padding: 20px;
     border-radius: 15px; 
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); 
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7); 
     display: inline-block;
     max-width: 600px; 
     margin: auto; 
+    position: relative; /* Para que o conteúdo fique acima do vídeo */
+    z-index: 1; /* Garante que o container fique acima do vídeo */
 }
 
 h1 {
@@ -32,7 +47,6 @@ h2 {
     font-size: 2em; 
     margin: 20px 0; 
 }
-
 
 img {
     width: 100%; 
@@ -80,10 +94,10 @@ img {
 }
 
 @keyframes fall {
-    0% { transform: translateY(0); } 
-    100% { transform: translateY(100vh); } 
+    0% { transform: translateY(0) scale(1); } 
+    50% { transform: translateY(50vh) scale(1.2); } 
+    100% { transform: translateY(100vh) scale(1); } 
 }
-
 
 @media (max-width: 600px) {
     h1 {
@@ -101,4 +115,38 @@ img {
     .container {
         padding: 15px; 
     }
+}
+
+.info-box {
+    border: 1px solid #fff; /* Adiciona uma borda branca ao redor da caixinha */
+    padding: 20px; /* Espaçamento interno */
+    margin: 20px 0; /* Espaçamento externo */
+    border-radius: 15px; /* Arredondamento dos cantos */
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra suave */
+}
+
+#special-video {
+    width: 100%; /* Torna o vídeo responsivo */
+    border-radius: 10px; /* Arredonda os cantos do vídeo */
+    transition: transform 0.3s ease; /* Efeito de transição ao aplicar hover */
+}
+
+#special-video:hover {
+    transform: scale(1.05); /* Aumenta o vídeo levemente ao passar o mouse */
+}
+
+#play-music-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff4081; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves */
+}
+
+#play-music-btn:hover {
+    background-color: #e91e63; /* Cor mais escura ao passar o mouse */
 }
