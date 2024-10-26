@@ -1,14 +1,13 @@
 let storedDate = localStorage.getItem('eventDate');
 let eventDate;
 
-// Obtém a data do evento ou define uma nova
 if (storedDate) {
     eventDate = new Date(storedDate);
 } else {
-    eventDate = new Date();
-    eventDate.setDate(eventDate.getDate() - 17);
-    eventDate.setHours(eventDate.getHours() - 21);
-    eventDate.setMinutes(eventDate.getMinutes() - 37);
+   
+    eventDate = new Date("2024-10-06T23:14:30");
+
+    // Salva a data no localStorage
     localStorage.setItem('eventDate', eventDate);
 }
 
