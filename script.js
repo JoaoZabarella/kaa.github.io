@@ -1,13 +1,16 @@
 let storedDate = localStorage.getItem('eventDate');
 let eventDate;
 
-// Defina a data de início do evento para 6 de outubro de 2024 às 14:00
+// Defina a data de início do evento para 6 de junho de 2024 às 14:00
 if (storedDate) {
     eventDate = new Date(storedDate);
 } else {
     eventDate = new Date("2024-06-06T14:00:00");
-    localStorage.setItem('eventDate', eventDate);
+    localStorage.setItem('eventDate', eventDate.toString());
 }
+
+// Definição da segunda data de evento que estava faltando
+let secondEventDate = new Date("2024-06-06T14:00:00"); // Adicionei esta definição que estava faltando
 
 // Função para atualizar a contagem regressiva
 const countdown = setInterval(() => {
@@ -119,16 +122,20 @@ const videoElement = document.getElementById('video');
 const playButton = document.getElementById('play-btn');
 const pauseButton = document.getElementById('pause-btn');
 
-// Reproduzir o vídeo
-playButton.addEventListener('click', () => {
-    if (videoElement) {
-        videoElement.play();
-    }
-});
+if (playButton) {
+    // Reproduzir o vídeo
+    playButton.addEventListener('click', () => {
+        if (videoElement) {
+            videoElement.play();
+        }
+    });
+}
 
-// Pausar o vídeo
-pauseButton.addEventListener('click', () => {
-    if (videoElement) {
-        videoElement.pause();
-    }
-});
+if (pauseButton) {
+    // Pausar o vídeo
+    pauseButton.addEventListener('click', () => {
+        if (videoElement) {
+            videoElement.pause();
+        }
+    });
+}
